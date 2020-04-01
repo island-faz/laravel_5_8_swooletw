@@ -1,0 +1,59 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+
+
+
+                    <div class="form-group">
+
+                        <input type="email" class="form-control" name="msg" id="msg">
+
+                        <button class="btn btn-block btn-primary mt-3" id="send" onclick="sendmsg();">Send</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+
+
+@section('js')
+
+<script type="text/javascript">
+
+    var sock = new WebSocket("ws://127.0.0.1:1215");
+
+    sock.onopen = function(){
+        console.log("connected");
+    }
+
+    // Send a message when the form is submitted.
+    function sendmsg() {
+        alert("sending");
+        var message = document.getElementById("msg").value;
+        sock.send(message);
+        return false;
+    };
+
+</script>
+
+@endsection
+
+@section('css')
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+@endsection

@@ -33,8 +33,8 @@ return [
 
         SwooleTW\Http\Websocket\Middleware\DecryptCookies::class,
         SwooleTW\Http\Websocket\Middleware\StartSession::class,
-        \Illuminate\Session\Middleware\AuthenticateSession::class,
-        //SwooleTW\Http\Websocket\Middleware\Authenticate::class,
+        //\Illuminate\Session\Middleware\AuthenticateSession::class,
+        SwooleTW\Http\Websocket\Middleware\Authenticate::class,
     ],
 
     /*
