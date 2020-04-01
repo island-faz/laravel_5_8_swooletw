@@ -28,4 +28,9 @@ class SocketController extends Controller
         dump("message received: " . $data . " From: " . Websocket::getUserId());
         Websocket::broadcast()->emit('message', $data);
     }
+
+    public function disconnect()
+    {
+        dump("User " . Auth::id() . " disconnected.");
+    }
 }

@@ -16,8 +16,6 @@ use SwooleTW\Http\Websocket\Facades\Websocket;
 
 Websocket::on('connect', "\App\Http\Controllers\SocketController@connect");
 
-Websocket::on('disconnect', function ($websocket) {
-    dump("User " . Auth::id() . " disconnected.");
-});
+Websocket::on('disconnect', "\App\Http\Controllers\SocketController@disconnect");
 
 Websocket::on('message', "\App\Http\Controllers\SocketController@message");
