@@ -1,0 +1,3 @@
+php artisan --version
+php artisan optimize:clear
+php artisan swoole:http start
