@@ -55,7 +55,8 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Hot reload configuration
+    | Hot reload configurationTéchnicien SpécialiséDéveloppement MultimédiaTrès Bien
+
     |--------------------------------------------------------------------------
     */
     'hot_reload' => [

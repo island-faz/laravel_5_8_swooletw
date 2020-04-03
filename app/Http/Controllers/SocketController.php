@@ -20,7 +20,6 @@ class SocketController extends Controller
         dump("---------------------------------------------------------------------------");
 
         Websocket::loginUsingId($userId);
-
     }
 
     public function message(Request $request, $data)
@@ -31,6 +30,6 @@ class SocketController extends Controller
 
     public function disconnect()
     {
-        dump("User " . Auth::id() . " disconnected.");
+        dump("User " . Websocket::getUserId() . " disconnected.");
     }
 }
